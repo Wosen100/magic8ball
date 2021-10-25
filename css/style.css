@@ -4,7 +4,33 @@ body,html {
 }
 
 body {
-    display: grid;
+    animation: colorchange 3.5s linear 1s infinite; /* animation-name followed by duration in seconds*/
+       /* you could also use milliseconds (ms) or something like 2.5s */
+    -webkit-animation: colorchange 3.5s linear 0s infinite alternate; /* Chrome and Safari */
+  }
+
+  @keyframes colorchange
+  {
+    0%   {background: rgb(183, 0, 255); color: cyan;}
+    33%  {background: green; color: magenta;}
+    66%  {background: blue; color: yellow;}
+    100% {background: red; color: cyan;}
+ }
+
+  @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+  {
+    0%   {background: red; color: cyan;}
+    33%  {background: green; color: magenta;}
+    66%  {background: blue; color: yellow;}
+    100% {background: red; color: cyan;}
+ }
+
+
+
+
+body {
+
+ display: grid;
     place-items: center;
     /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M2.847163189322373 609.7650250825861L124.4634100902493 514.7479994291998 29.446384436863028 393.13175252827295-92.1698624640639 488.1487781816592z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M269.4488214435052 353.53741320431203L209.15690366525737 446.3788249922254 301.9983154531708 506.6707427704732 362.2902332314186 413.82933098255984z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1444.051339201973 116.2690054636734L1319.1224094767679-0.4518968543941426 1282.9658882491335 144.56398910838564z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M947.8326381316034-35.570448764392864L882.0290423565749-88.85714994982933 835.0007884659344 36.49159430543163z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1137.831%2c647.823C1190.33%2c648.681%2c1245.856%2c634.058%2c1272.405%2c588.759C1299.187%2c543.064%2c1284.069%2c487.764%2c1258.98%2c441.118C1232.117%2c391.174%2c1194.381%2c342.809%2c1137.831%2c338.553C1074.647%2c333.797%2c1009.464%2c363.863%2c980.361%2c420.147C952.94%2c473.178%2c976.709%2c535.379%2c1010.669%2c584.48C1039.54%2c626.223%2c1087.083%2c646.993%2c1137.831%2c647.823' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M867.5031140754754 569.5199089622388L825.6854594638866 466.0175817923918 722.1831322940395 507.83523640398073 764.0007869056284 611.3375635738277z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e"); */
     background-color: #ffffff;
@@ -16,8 +42,34 @@ background-size: cover;
 }
 
 
-#ball {
-    height: 340px;
-    display: block;
-    margin-top: 15px;
+.hidden {
+    display: none;
 }
+
+img {
+    width: 350px ;
+}
+button {
+    padding: 5px 10px;
+
+    background-color: rgb(17, 39, 163);
+    color: cornsilk;
+    border-radius: -webkit-border-radius 40px 32px 40px 40px;
+    -moz-border-radius: 40px 32px 40px 40px;
+    border-radius: 40px 32px 40px 40px;
+
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0);
+
+}
+
+
+
+/* .questionText {
+   /* display: flex;  */
+  /* justify-content: center;   */
+  /* align-items: center;   */
+  /* height: 60px;  */
+    /* border: 3px solid green;  */
+
+
+}  */
