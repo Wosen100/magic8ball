@@ -13,7 +13,7 @@ askAgain.addEventListener("click", askAgainFN)
 
 function askFn() {
     const randomNum = Math.floor(Math.random() * 20)+1;  // 
-    const imgsrc = "./../magic/magic8ball_" + randomNum + ".png";
+    const imgsrc = "./magic/magic8ball_" + randomNum + ".png";
     console.log(imgsrc)
 
     const imgtag = document.createElement("img")
